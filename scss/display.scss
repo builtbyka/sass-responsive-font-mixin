@@ -1,0 +1,6 @@
+h1{
+    @include responsive-font-size($h1-font-breaks);
+    
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}

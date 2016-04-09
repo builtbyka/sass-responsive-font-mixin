@@ -1,0 +1,20 @@
+$h1-font-breaks: (
+  null  : 55px,
+  480px : 65px,
+  640px : 75px,
+  1024px: 85px,
+);
+
+@mixin responsive-font-size($font-breaks) {
+  //loops through the object to inject the breakpoint and then the font size
+  // mobile by default
+  @each $font-break, $font-size in $font-breaks {
+    @if $font-break == null {
+      font-size: $font-size;
+    } @else {
+      @media screen and (min-width: $font-break) {
+        font-size: $font-size;
+      }
+    }
+  }
+}
